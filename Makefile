@@ -33,7 +33,7 @@ SRCS = ft_isalnum.c \
 		ft_strjoin.c \
 		ft_strmapi.c \
 		ft_strtrim.c \
-		ft_striteri
+		ft_striteri.c
 
 OBJS = $(SRCS:.c=.o)
 
