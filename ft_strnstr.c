@@ -15,25 +15,22 @@
 char	*ft_strnstr(char *str, char *to_find, size_t n)
 {
 	size_t	i;
-	int		j;
+	size_t	j;
 
 	i = 0;
-	if (*to_find == '\0')
-		return ((char *)str);
-	while (*str != '\0' && i < n)
+	if (*needle == '\0' || needle == haystack)
+		return ((char *)haystack);
+	if (!needle & !len)
+		return (NULL);
+	while (haystack[i] && i < len)
 	{
-		if (str[i] == to_find[0])
-		{
-			j = 0;
-			while (to_find[i] && str[i + j] && i + j < n
-				&& str[i + j] == to_find[j])
-			{
-				j++;
-			}
-			if (to_find[j] == '\0')
-				return ((char *)str + i);
-		}
+		j = 0;
+		while (haystack[i + j] && needle[j]
+			&& i + j < len && haystack[i + j] == needle[j])
+			j++;
+		if (!needle[j])
+			return ((char *)(haystack + i));
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
