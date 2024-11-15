@@ -26,9 +26,9 @@ char	*ft_strnstr(const char *str, char *to_find, size_t n)
 	{
 		j = 0;
 		while (str[i + j] && to_find[j]
-			&& i + j < len && str[i + j] == to_find[j])
+			&& i + j < n && str[i + j] == to_find[j])
 			j++;
-		if (!needle[j])
+		if (!to_find[j])
 			return ((char *)(str + i));
 		i++;
 	}
